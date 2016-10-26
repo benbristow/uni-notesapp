@@ -1,7 +1,7 @@
 notesApp.directive('noteList', function() {
   return {
     restrict: 'E',
-    templateUrl: '/components/note-list/note-list.html',
+    templateUrl: 'components/note-list/note-list.html',
     controller: 'noteListController',
     scope: {
       notes: '=',
@@ -21,7 +21,7 @@ notesApp.controller('noteListController', function($scope) {
 
   $scope.deleteNote = function(note) {
     $scope.notes.splice($scope.notes.indexOf(note));
-    if($scope.notes.length == 0) {
+    if($scope.notes.length === 0) {
       $scope.createNote();
     } else {
       $scope.selectLastNote();
