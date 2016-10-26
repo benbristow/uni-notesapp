@@ -1,0 +1,12 @@
+<div class="note-editor">
+  <header>{{ note.title }}</header>
+  <textarea ui-tinymce ng-model="note.content"></textarea>
+  <p>
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">{{ note.title }}</h4>
+        <span ng-bind-html="note.content | html"></span>
+      </div>
+    </div>
+  </p>
+</div>

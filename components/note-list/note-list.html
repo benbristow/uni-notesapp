@@ -1,0 +1,17 @@
+<div class="note-list">
+  <header>
+    My Notes
+    <button ng-click="createNote()" class="btn btn-success btn-sm">
+      <i class="fa fa-plus"></i>
+    </button>
+  </header>
+  <ul>
+    <li ng-repeat="note in notes" ng-click="selectNote(note)" ng-class="{ 'selected': note == selectedNote }">
+      <h3>{{ note.title }}</h3>
+      <small ng-bind="note.content | htmlToPlaintext | limitTo: 255"></small>
+      <button ng-click="deleteNote(deleteNote)" class="btn btn-danger btn-sm">
+        <i class="fa fa-trash"></i>
+      </button>
+    </li>
+  </ul>
+</div>

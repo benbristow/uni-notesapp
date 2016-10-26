@@ -1,0 +1,13 @@
+.note-editor header {
+  display: block;
+  padding: 10px;
+  width: 100%;
+
+  background: #000;
+  color: #EEE;
+  text-align: center;
+}
+
+.note-editor textarea {
+  min-height: 50vh;
+}

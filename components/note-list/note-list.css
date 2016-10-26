@@ -1,0 +1,43 @@
+.note-list {
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: scroll;
+  background: #CCC;
+  width:100%;
+}
+
+.note-list header {
+  display: block;
+  background: #000;
+  color: #EEE;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+}
+
+.note-list header > button {
+  right: 10px;
+  float: right;
+}
+
+.note-list ul {
+  padding: 0px;
+  cursor: pointer;
+}
+
+.note-list ul > li {
+  display: block;
+  width: 100%;
+  background: #FFF;
+  border: 1px solid #EEE;
+  padding: 10px;
+}
+
+.note-list ul > li.selected {
+  background: #EEE;
+}
+
+.note-list ul > li > button {
+  position: relative;
+  display: block;
+}
