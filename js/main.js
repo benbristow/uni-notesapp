@@ -1,6 +1,7 @@
-var notesApp = angular.module('notes', ['ui.router', 'ui.tinymce']);
+var notesApp = angular.module('notes', ['ui.router', 'ui.tinymce', 'LocalStorageModule']);
 
-notesApp.config(function($stateProvider, $urlRouterProvider) {
+notesApp.config(function($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
+  localStorageServiceProvider.setPrefix('notesApp');
   $urlRouterProvider.otherwise('/');
   $stateProvider
     .state('main', {
@@ -18,6 +19,6 @@ notesApp.filter('html', function ($sce) {
 
 notesApp.filter('htmlToPlaintext', function() {
   return function(text) {
-    return text ? String(text).replace(/<[^>]+>/gm, '') : '';
+    return text ? String(text).replace(/<[^>]+>/gm, '').replace('&nbsp;', ' ') : '';
   };
 });

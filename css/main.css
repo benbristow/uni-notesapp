@@ -6,6 +6,11 @@ textarea {
   resize: vertical;
 }
 
+.signature {
+  width: 100%;
+  border: 1px solid #000;
+}
+
 .no-gutter.row,
 .no-gutter.container,
 .no-gutter.container-fluid{

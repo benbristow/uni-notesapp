@@ -9,5 +9,8 @@ notesApp.directive('noteEditor', function() {
   };
 });
 
-notesApp.controller('noteEditorController', function() {
+notesApp.controller('noteEditorController', function($scope) {
+  $scope.editTitle = function() {
+    $scope.note.title = prompt("What are you calling this note?", $scope.note.title);
+  }
 });

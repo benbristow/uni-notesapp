@@ -10,22 +10,16 @@ notesApp.directive('noteList', function() {
   };
 });
 
-notesApp.controller('noteListController', function($scope) {
+notesApp.controller('noteListController', function($scope, notesFactory) {
   $scope.createNote = function() {
-    $scope.notes.push({
-      title: "New Note",
-      content: "Congrats, you've made a new note!"
-    });
+    notesFactory.addNote();
+    $scope.notes = notesFactory.getNotes();
     $scope.selectLastNote();
   };
 
   $scope.deleteNote = function(note) {
-    $scope.notes.splice($scope.notes.indexOf(note));
-    if($scope.notes.length === 0) {
-      $scope.createNote();
-    } else {
-      $scope.selectLastNote();
-    }
+    notesFactory.deleteNote(note);
+    $scope.notes = notesFactory.getNotes();
   };
 
   $scope.selectNote = function(note) {
