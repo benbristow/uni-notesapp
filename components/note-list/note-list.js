@@ -20,6 +20,7 @@ notesApp.controller('noteListController', function($scope, notesFactory) {
   $scope.deleteNote = function(note) {
     notesFactory.deleteNote(note);
     $scope.notes = notesFactory.getNotes();
+    $scope.selectLastNote();
   };
 
   $scope.selectNote = function(note) {
