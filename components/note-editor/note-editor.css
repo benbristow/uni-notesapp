@@ -8,6 +8,10 @@
   text-align: center;
 }
 
+.note-editor header a {
+  color: #FFF;
+}
+
 .note-editor textarea {
   min-height: 50vh;
 }

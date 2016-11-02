@@ -1,7 +1,10 @@
 <div class="note-list">
   <header>
     My Notes
-    <button ng-click="createNote()" class="btn btn-success btn-sm">
+    <button map-viewer notes="notes" selectedNote="selectedNote" class="btn btn-primary btn-sm" id="map">
+      <i class="fa fa-map"></i>
+    </button>
+    <button ng-click="createNote()" class="btn btn-success btn-sm" id="create">
       <i class="fa fa-plus"></i>
     </button>
   </header>

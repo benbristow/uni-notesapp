@@ -21,6 +21,13 @@
     "angular-ui-tinymce": "^0.0.17",
     "angular-ui-router": "ui-router#^0.3.1",
     "font-awesome": "^4.7.0",
-    "angular-local-storage": "^0.5.2"
+    "angular-local-storage": "^0.5.2",
+    "ngGeolocation": "^0.0.8",
+    "angular-bootstrap": "^2.2.0",
+    "angular-leaflet-directive": "^0.10.0",
+    "leaflet": "^1.0.1"
+  },
+  "resolutions": {
+    "leaflet": "^1.0.1"
   }
 }

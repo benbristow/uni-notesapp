@@ -10,7 +10,14 @@ notesApp.directive('noteEditor', function() {
 });
 
 notesApp.controller('noteEditorController', function($scope) {
+  $scope.tinymceOptions = {
+    plugins : 'advlist autolink charmap fullscreen link image media lists paste print preview wordcount',
+    skin: 'lightgray',
+    theme : 'modern'
+  };
+
   $scope.editTitle = function() {
-    $scope.note.title = prompt("What are you calling this note?", $scope.note.title);
-  }
+    var inputTitle = prompt("What are you calling this note?", $scope.note.title);
+    $scope.note.title = inputTitle ? inputTitle : "Unnamed Note";
+  };
 });

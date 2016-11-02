@@ -2,5 +2,5 @@
   <header>
     {{ note.title }} &nbsp; <small><a href ng-click="editTitle();"><i class="fa fa-pencil"></i></a>
   </header>
-  <textarea ui-tinymce ng-model="note.content"></textarea>
+  <textarea ui-tinymce="tinymceOptions" ng-model="note.content"></textarea>
 </div>

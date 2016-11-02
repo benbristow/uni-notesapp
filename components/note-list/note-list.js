@@ -10,11 +10,14 @@ notesApp.directive('noteList', function() {
   };
 });
 
-notesApp.controller('noteListController', function($scope, notesFactory) {
+notesApp.controller('noteListController', function($scope, $geolocation, notesFactory) {
   $scope.createNote = function() {
-    notesFactory.addNote();
-    $scope.notes = notesFactory.getNotes();
-    $scope.selectLastNote();
+    $geolocation.getCurrentPosition().then(function(position) {
+      notesFactory.saveNotes($scope.notes);
+      notesFactory.addNote(position);
+      $scope.notes = notesFactory.getNotes();
+      $scope.selectLastNote();
+    });
   };
 
   $scope.deleteNote = function(note) {

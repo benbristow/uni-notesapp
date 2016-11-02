@@ -1,4 +1,11 @@
-var notesApp = angular.module('notes', ['ui.router', 'ui.tinymce', 'LocalStorageModule']);
+var notesApp = angular.module('notes', [
+  'LocalStorageModule',
+  'ui.router',
+  'ui.tinymce',
+  'ui.bootstrap',
+  'ngGeolocation',
+  'leaflet-directive'
+]);
 
 notesApp.config(function($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
   localStorageServiceProvider.setPrefix('notesApp');

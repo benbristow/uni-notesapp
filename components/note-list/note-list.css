@@ -15,7 +15,12 @@
   width: 100%;
 }
 
-.note-list header > button {
+.note-list header > button#map {
+  left: 10px;
+  float: left;
+}
+
+.note-list header > button#create {
   right: 10px;
   float: right;
 }

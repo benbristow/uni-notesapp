@@ -3,9 +3,10 @@ notesApp.factory('notesFactory', ['localStorageService', function(localStorageSe
     return [
       {
         title: "New Note",
-        content: ""
+        content: "",
+        coordinates: "Glasgow Central Station"
       }
-    ]
+    ];
   };
 
   return {
@@ -17,9 +18,13 @@ notesApp.factory('notesFactory', ['localStorageService', function(localStorageSe
       return notes;
     },
 
-    addNote: function() {
+    addNote: function(position) {
       var notes = this.getNotes();
-      notes.push({ title: "New Note", content: "" });
+      notes.push({
+        title: "New Note",
+        content: "",
+        coordinates: "Glasgow Central Station"
+      });
       localStorageService.set('notes', notes);
     },
 
@@ -27,7 +32,7 @@ notesApp.factory('notesFactory', ['localStorageService', function(localStorageSe
       var notes = this.getNotes();
       notes.splice(notes.indexOf(note));
       localStorageService.set('notes', notes);
-      if(notes.length == 0) {
+      if(notes.length === 0) {
         this.addNote();
       }
     },
