@@ -14,6 +14,7 @@ notesApp.controller('noteListController', function($scope, $geolocation, notesFa
   $scope.createNote = function() {
     $geolocation.getCurrentPosition().then(function(position) {
       notesFactory.saveNotes($scope.notes);
+      $scope.notes = notesFactory.getNotes();
       notesFactory.addNote(position);
       $scope.notes = notesFactory.getNotes();
       $scope.selectLastNote();

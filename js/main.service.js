@@ -23,7 +23,7 @@ notesApp.factory('notesFactory', ['localStorageService', function(localStorageSe
       notes.push({
         title: "New Note",
         content: "",
-        coordinates: "Glasgow Central Station"
+        coordinates: position
       });
       localStorageService.set('notes', notes);
     },
