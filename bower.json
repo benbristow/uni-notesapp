@@ -24,8 +24,9 @@
     "angular-local-storage": "^0.5.2",
     "ngGeolocation": "^0.0.8",
     "angular-bootstrap": "^2.2.0",
-    "angular-leaflet-directive": "^0.10.0",
-    "leaflet": "^1.0.1"
+    "angular-google-maps": "^2.4.0",
+    "lodash": "^4.17.2",
+    "angular-simple-logger": "^0.1.7"
   },
   "resolutions": {
     "leaflet": "^1.0.1"

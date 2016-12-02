@@ -12,9 +12,9 @@ notesApp.directive('noteList', function() {
 
 notesApp.controller('noteListController', function($scope, $geolocation, notesFactory) {
   $scope.createNote = function() {
+    notesFactory.saveNotes($scope.notes);
+    $scope.notes = notesFactory.getNotes();
     $geolocation.getCurrentPosition().then(function(position) {
-      notesFactory.saveNotes($scope.notes);
-      $scope.notes = notesFactory.getNotes();
       notesFactory.addNote(position);
       $scope.notes = notesFactory.getNotes();
       $scope.selectLastNote();
@@ -22,7 +22,8 @@ notesApp.controller('noteListController', function($scope, $geolocation, notesFa
   };
 
   $scope.deleteNote = function(note) {
-    notesFactory.deleteNote(note);
+    notesFactory.saveNotes($scope.notes);
+    notesFactory.deleteNote($scope.notes.indexOf(note));
     $scope.notes = notesFactory.getNotes();
     $scope.selectLastNote();
   };

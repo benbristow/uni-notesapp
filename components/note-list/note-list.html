@@ -1,7 +1,7 @@
 <div class="note-list">
   <header>
     My Notes
-    <button map-viewer notes="notes" selectedNote="selectedNote" class="btn btn-primary btn-sm" id="map">
+    <button map-viewer notes="notes" selected-note="selectedNote" class="btn btn-primary btn-sm" id="map">
       <i class="fa fa-map"></i>
     </button>
     <button ng-click="createNote()" class="btn btn-success btn-sm" id="create">
@@ -12,7 +12,7 @@
     <li ng-repeat="note in notes" ng-click="selectNote(note)" ng-class="{ 'selected': note == selectedNote }">
       <h3>{{ note.title }}</h3>
       <small ng-bind="note.content | htmlToPlaintext | limitTo: 255"></small>
-      <button ng-click="deleteNote(deleteNote)" class="btn btn-danger btn-sm">
+      <button ng-click="deleteNote(note)" class="btn btn-danger btn-sm">
         <i class="fa fa-trash"></i>
       </button>
     </li>

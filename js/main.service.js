@@ -3,8 +3,11 @@ notesApp.factory('notesFactory', ['localStorageService', function(localStorageSe
     return [
       {
         title: "New Note",
-        content: "",
-        coordinates: "Glasgow Central Station"
+        content: "test",
+        coordinates: {
+          latitude: 55.8591118,
+          longitude: -4.2602975
+        }
       }
     ];
   };
@@ -14,6 +17,7 @@ notesApp.factory('notesFactory', ['localStorageService', function(localStorageSe
       var notes = localStorageService.get('notes');
       if(notes === null) {
         notes = initializeNotes();
+        this.saveNotes(notes);
       }
       return notes;
     },
@@ -23,18 +27,21 @@ notesApp.factory('notesFactory', ['localStorageService', function(localStorageSe
       notes.push({
         title: "New Note",
         content: "",
-        coordinates: position
+        coordinates: {
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude
+        }
       });
-      localStorageService.set('notes', notes);
+      this.saveNotes(notes);
     },
 
-    deleteNote: function(note) {
+    deleteNote: function(noteIndex) {
       var notes = this.getNotes();
-      notes.splice(notes.indexOf(note));
-      localStorageService.set('notes', notes);
-      if(notes.length === 0) {
-        this.addNote();
+      notes.splice(noteIndex, 1 );
+      if(notes.length == 0) {
+        notes = initializeNotes();
       }
+      this.saveNotes(notes);
     },
 
     saveNotes: function(notes) {

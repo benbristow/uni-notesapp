@@ -6,6 +6,8 @@
     <h4 class="modal-title">Your Notes by Location</h4>
   </div>
   <div class="modal-body">
-    <leaflet center="center"></leaflet>
+    <ui-gmap-google-map center='map.center' zoom='map.zoom' ng-if="true">
+      <ui-gmap-marker ng-repeat="note in notes" idkey="note.$$hashKey" coords="note.coordinates" click="selectNote(note)"/>
+    </ui-gmap-google-map>
   </div>
 </div>

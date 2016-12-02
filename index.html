@@ -6,25 +6,27 @@
 
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css"/>
-    <link rel="stylesheet" type="text/css" href="bower_components/leaflet/dist/leaflet.css"/>
 
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
     <link rel="stylesheet" type="text/css" href="components/note-list/note-list.css"/>
     <link rel="stylesheet" type="text/css" href="components/note-editor/note-editor.css"/>
+
+    <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
   </head>
   <body>
     <div ui-view></div>
 
+    <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/tinymce/tinymce.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/leaflet/dist/leaflet.js"></script>
 
+    <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
     <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
     <script src="bower_components/ngGeolocation/ngGeolocation.min.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-    <script src="bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.min.js"></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
 
     <script src="js/main.js"></script>
     <script src="js/main.controller.js"></script>

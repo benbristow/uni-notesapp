@@ -15,14 +15,21 @@ notesApp.directive('mapViewer', function() {
 });
 
 notesApp.controller('mapViewerController', function($scope, $uibModal) {
-  $scope.center = {
-    lat: 59.91,
-    lng: 10.75,
-    zoom: 12
+  $scope.map = {
+    center: {
+      latitude: 54.4688455,
+      longitude: -3.7026863
+    },
+    zoom: 5
   };
 
+  $scope.selectNote = function(note) {
+    $scope.selectedNote = note;
+    $scope.modalInstance.close();
+  }
+
   $scope.openModal = function() {
-    $uibModal.open({
+    $scope.modalInstance = $uibModal.open({
       animation: true,
       ariaLabelledBy: 'modal-title-bottom',
       ariaDescribedBy: 'modal-body-bottom',

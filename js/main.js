@@ -4,7 +4,7 @@ var notesApp = angular.module('notes', [
   'ui.tinymce',
   'ui.bootstrap',
   'ngGeolocation',
-  'leaflet-directive'
+  'uiGmapgoogle-maps'
 ]);
 
 notesApp.config(function($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
